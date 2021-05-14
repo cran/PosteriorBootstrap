@@ -1,27 +1,34 @@
 # PosteriorBootstrap
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Build Status](https://travis-ci.com/alan-turing-institute/PosteriorBootstrap.svg?branch=master)](https://travis-ci.com/alan-turing-institute/PosteriorBootstrap)
-[![codecov](https://codecov.io/gh/alan-turing-institute/PosteriorBootstrap/branch/master/graph/badge.svg)](https://codecov.io/gh/alan-turing-institute/PosteriorBootstrap)
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+[![CRAN Status](https://www.r-pkg.org/badges/version/PosteriorBootstrap)](https://cran.r-project.org/package=PosteriorBootstrap)
+[![CRAN Downloads](https://cranlogs.r-pkg.org/badges/PosteriorBootstrap)](https://www.r-pkg.org/pkg/PosteriorBootstrap)
+[![Package check](https://github.com/alan-turing-institute/PosteriorBootstrap/workflows/check-package/badge.svg)](https://github.com/alan-turing-institute/PosteriorBootstrap/actions)
+[![Codecov test coverage](https://codecov.io/gh/alan-turing-institute/PosteriorBootstrap/branch/master/graph/badge.svg)](https://codecov.io/gh/alan-turing-institute/PosteriorBootstrap)
 
 Bayesian learning is built on an assumption that the model space contains a true
-reflection of the data generating mechanism. This assumption is problematic,
-particularly in complex data environments. By using a Bayesian non-parametric
-approach to learning, we no longer have to assume that the model is true.
+reflection of the data generating mechanism. This assumption can be problematic
+in complex data environments. By using a Bayesian non-parametric approach to
+learning, we no longer have to assume that the model is true.
 
 This package implements a non-parametric statistical model using a parallelised
 Monte Carlo sampling scheme. The method implemented in this package allows
-non-parameteric inference to be regularized for small sample sizes, while also
+non-parametric inference to be regularized for small sample sizes, while also
 being more accurate than approximations such as variational Bayes.
 
-The `concentration` parameter is an effective sample size parameter, determining
+The concentration parameter is an effective sample size parameter, determining
 the faith we have in the model versus the data. When the concentration is low,
 the samples are close to the exact Bayesian logistic regression method; when the
 concentration is high, the samples are close to the simplified variational Bayes
 logistic regression.
 
 ## Installation
+This package is available on CRAN. The latest release can be installed using
 
-You can install from Github with `devtools`:
+```r
+install.packages("PosteriorBootstrap")
+```
+
+If you prefer to use the bleeding edge version, you can install from Github with `devtools`:
 
 ```r
 requireNamespace("devtools", quietly = TRUE)
@@ -54,50 +61,49 @@ parametric model.
 
 ## Issues and bug reports
 
-The user discussion and development of strace take place on [Github issues](https://github.com/alan-turing-institute/PosteriorBootstrap/issues).
+For any bug reports or feature requests, please open an [issue on Github](https://github.com/alan-turing-institute/PosteriorBootstrap/issues).
 
 ## Parallelisation
 
 The calculation of the expected speedup depends on the number of bootstrap
 samples and the number of processors. It also depends on the system: it is
 larger on macOS than on Linux, with some variation depending on the version of
-R.
+R. **Please note that parallelisation is currently unsupported on Windows**.
 
 Fixing the number of samples corresponds to [Ahmdal's
 law](https://en.wikipedia.org/wiki/Ahmdal's_Law), or the speedup in the task as
-a function of the number of processors. The speedup `S_latency` of `N` processors is defined as
-the duration of the task with one core divided by the duration of the task with
-`N` processors. For the number of bootstrap samples in
-100, 1000, and 10,000, the speedup is:
+a function of the number of processors. The speedup `S_latency` of `N` processors
+is defined as the duration of the task with one core divided by the duration of
+the task with `N` processors. When using 100, 1000 and 10000 samples, the following
+speed-ups were observed:
 
 ![Parallelisation speedup](man/figures/Speedup.png)
 
 Inverting Ahmdal's law gives the proportion of the execution time that is
-parallelisable from the speedup
+parallelisable from the speedup:
 
-$$ p = \frac{\frac{1}{S_{latency}}} - 1}{\frac{1}{s} - 1} $$
+<img src="https://latex.codecogs.com/svg.latex?p=\frac{\frac{1}{S_{latency}}-1}{\frac{1}{s}-1}" title="Parallelisable fraction" />
 
-where $S_{latency}$ is the theoretical speedup of the whole task in Ahmdal's law
-and the observed speedup here, and $s$ is the speedup of the part of the task
-that can be parallelised, and thus equal to the number of
-processors. Calculating this value for the durations from 1 to 64 cores gives
-this plot:
+where `S_latency` is the execution speedup for the whole task (as defined above), and `s` is the
+speedup for the part of the task that can be parallelised. In this case, `s` is simply equal to the
+number of cores used, so repeatedly measuring `S_latency` for several choices of number of cores
+gives this plot:
 
 ![Parallelisation proportion](man/figures/Proportion.png)
 
 The proportion of the code that can be parallelised is high, and higher the
 large the bootstrap samples, and always below 1. For large samples with
-`n_bootstrap = 10,000`, the values are close to 100%.
+`n_bootstrap = 10000`, the values are close to 100%.
 
 
 ## Reproducing the results on Azure
 
 To run the results in this section automatically, you'll need a [Microsoft Azure
-subscription](http://azure.microsoft.com/en-gb/) (one of the [free
-subscriptions](http://azure.microsoft.com/en-gb/free/) for example) and the
+subscription](https://azure.microsoft.com/en-gb/) (one of the [free
+subscriptions](https://azure.microsoft.com/en-gb/free/) for example) and the
 [Azure Command-Line
-Interface (CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos?view=azure-cli-latest). You
-will need to login to your Azure account with the Azure CLI:
+Interface (CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos?view=azure-cli-latest).
+You will need to login to your Azure account with the Azure CLI:
 
 ```bash
 az login

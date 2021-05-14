@@ -268,7 +268,7 @@ approximations, that our algorithm can correct.
 
 # Parallelisation and performance
 
-Our construction admits a trivially parallelizable sampler once the parametric
+Our construction admits a trivially parallelisable sampler once the parametric
 posterior samples have been generated (or if the concentration `c` equals
 0). Note that, although some algorithms to generate the parametric posterior
 samples may be parallelisable, above we use a Markov Chain-Monte Carlo algorithm
@@ -276,7 +276,7 @@ from RStan, which is not parallelisable. We emphasise that the part of our
 algorithm that benefits from modern parallel computer architectures happens
 after we have the posterior samples (or if `c=0`).
 
-We now illustrate the paralellisation speedup. The calculation of the expected
+We now illustrate the parallelisation speedup. The calculation of the expected
 speedup depends on the number of bootstrap samples and the number of
 processors. It also depends on the system: it is larger on macOS than on Linux,
 with some variation depending on the version of R.

@@ -7,11 +7,12 @@
 
 #' A package with a parallel approach for adaptive non-parametric learning
 #'
-#' The foo package provides two categories of functions. The first category
-#' returns or loads the system files that ship with the package: get_stan_file,
-#' get_german_credit_file, get_german_credit_dataset. The second category
-#' performs statistical sampling: draw_stick_breaks and draw_logit_samples (for
-#' adaptive non-parametric learning of the logistic regression model).
+#' The PosteriorBootstrap package provides two categories of functions.
+#' The first category returns or loads the system files that ship with the
+#' package: get_stan_file, get_german_credit_file, get_german_credit_dataset.
+#' The second category performs statistical sampling: draw_stick_breaks and
+#' draw_logit_samples (for adaptive non-parametric learning of the logistic
+#' regression model).
 #'
 #' Please see the vignette for sample usage and performance metrics.
 #'
@@ -210,7 +211,7 @@ check_inputs <- function(x, y, concentration, n_bootstrap, posterior_sample,
 #'   posterior is assumed normal N(\code{gamma_mean}, \code{gamma_vcov}). If
 #'   provided, the posterior sample must have a number of columns equal to the
 #'   number of covariates and a number of rows equal or larger than the
-#'   `n_bootrstap` (as the algorithm draws a new sample based on a single draw
+#'   `n_bootstrap` (as the algorithm draws a new sample based on a single draw
 #'   of the posterior sample).
 #' @param gamma_mean In case \code{posterior_sample} is NULL, the mean for the
 #'   centering model (equation 9, page 4).
