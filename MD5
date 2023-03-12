@@ -1,14 +1,14 @@
-66bd743a0e36631faaec47c713454216 *DESCRIPTION
+2af3b6ef7c1dd45f95f06f2c751e856d *DESCRIPTION
 8326b0f4dd988af911836906ee8845fd *LICENSE
 9ca1a93b6cbce38daf34aabc8c114d93 *NAMESPACE
-826a1c57e6f686f32db3f2954296164f *NEWS.md
+0380d754509e5ce40b2755fb68272653 *NEWS.md
 6ba7c5dd456cf0db2f75d819d7a68c98 *R/PosteriorBootstrap.R
 c3e4bf924f53fadc68205d8027c24c7d *R/data_loader.R
 6dc2665e7f74a1ca00ac5eda36ae95be *R/german_credit_loader.R
-01fa70aac24f6e7efab8ef0dd6a55edb *README.md
-8f296aec7694728ee5f0364f7ecf212f *build/vignette.rds
-66e2b078f34aa4aa2f39af807f9b64eb *inst/doc/PosteriorBootstrap.Rmd
-262b27d00e8895843d427f684fd92644 *inst/doc/PosteriorBootstrap.html
+a2d591af3aa5cf9d30f09e6b545fa481 *README.md
+b203727d21d0b24bd25fa43af210a813 *build/vignette.rds
+ba4e34b1d7959f41b902dacea344125d *inst/doc/PosteriorBootstrap.Rmd
+0a3d96ccc0c3cf1d730ad2cbe664b18d *inst/doc/PosteriorBootstrap.html
 fd04e64a61e9fede4b94a2df6aea14a2 *inst/extdata/bayes_logit.stan
 dd6d1bd8f4bcc4555b900b9c00955c33 *inst/extdata/statlog-german-credit.dat
 6105e00700ce019b1fefbb05598db307 *man/PosteriorBootstrap.Rd
@@ -25,4 +25,4 @@ ad2f823b904902486007b51bc57419df *man/figures/Speedup.png
 f4a216528f6f807b3f58c7b7ec1652c6 *tests/testthat/test_anpl.R
 2ed758d4a41736632e744471631fa7b4 *tests/testthat/test_german_data.R
 07fb764264083a3008c9ce6ad9cd9410 *tests/testthat/test_stick_breaking.R
-66e2b078f34aa4aa2f39af807f9b64eb *vignettes/PosteriorBootstrap.Rmd
+ba4e34b1d7959f41b902dacea344125d *vignettes/PosteriorBootstrap.Rmd

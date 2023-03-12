@@ -3,7 +3,7 @@
 [![CRAN Status](https://www.r-pkg.org/badges/version/PosteriorBootstrap)](https://cran.r-project.org/package=PosteriorBootstrap)
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/PosteriorBootstrap)](https://www.r-pkg.org/pkg/PosteriorBootstrap)
 [![Package check](https://github.com/alan-turing-institute/PosteriorBootstrap/workflows/check-package/badge.svg)](https://github.com/alan-turing-institute/PosteriorBootstrap/actions)
-[![Codecov test coverage](https://codecov.io/gh/alan-turing-institute/PosteriorBootstrap/branch/master/graph/badge.svg)](https://codecov.io/gh/alan-turing-institute/PosteriorBootstrap)
+[![Codecov test coverage](https://codecov.io/gh/alan-turing-institute/PosteriorBootstrap/branch/main/graph/badge.svg)](https://app.codecov.io/gh/alan-turing-institute/PosteriorBootstrap)
 
 Bayesian learning is built on an assumption that the model space contains a true
 reflection of the data generating mechanism. This assumption can be problematic
@@ -38,7 +38,7 @@ devtools::install_github("https://github.com/alan-turing-institute/PosteriorBoot
 ## Example usage and graphical result from the paper
 
 Please see the provided vignette (at
-[`vignettes/PosteriorBootstrap.Rmd`](https://github.com/alan-turing-institute/PosteriorBootstrap/blob/master/vignettes/PosteriorBootstrap.Rmd))
+[`vignettes/PosteriorBootstrap.Rmd`](https://github.com/alan-turing-institute/PosteriorBootstrap/blob/main/vignettes/PosteriorBootstrap.Rmd))
 for an example usage of the package to fit a logistic regression model to the
 Statlog German Credit dataset.
 
@@ -102,7 +102,7 @@ To run the results in this section automatically, you'll need a [Microsoft Azure
 subscription](https://azure.microsoft.com/en-gb/) (one of the [free
 subscriptions](https://azure.microsoft.com/en-gb/free/) for example) and the
 [Azure Command-Line
-Interface (CLI)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos?view=azure-cli-latest).
+Interface (CLI)](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos).
 You will need to login to your Azure account with the Azure CLI:
 
 ```bash
